@@ -12,7 +12,7 @@
 
 
 <div class="col-12 col-lg-4">
-          <div class="sidebar-area mt-5">
+        <div class="sidebar-area mt-5">
              <!-- Search Area -->
             <div class="card-body">
               <div class="input-group">
@@ -46,7 +46,7 @@
             </div>
 
             
-          </div>
         </div>
+</div>
 
         
