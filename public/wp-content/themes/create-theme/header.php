@@ -23,7 +23,7 @@
   <title>Poca - Podcast &amp; Audio Template</title>
 <!-- <h1>myyyyyyyyyyERTR<h1> -->
   <!-- Favicon -->
-  <link rel="icon" href="./img/core-img/favicon.ico">
+  <link rel="icon" href="<?php echo get_template_directory_uri();?>/img/core-img/favicon.ico">
 
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -34,7 +34,7 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-thumbnail">
-      <img src="./img/core-img/preloader.png" alt="">
+      <img src="<?php echo get_template_directory_uri();?>/img/core-img/preloader.png" alt="">
     </div>
   </div>
 
@@ -47,7 +47,7 @@
         <nav class="classy-navbar justify-content-between" id="pocaNav">
 
           <!-- Logo -->
-          <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+          <a class="nav-brand" href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/core-img/logo.png" alt=""></a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -64,44 +64,24 @@
 
             <!-- Nav Start -->
             <div class="classynav">
-              <ul id="nav">
-                <li class="current-item"><a href="./index.html">Home</a></li>
-                <li><a href="#">Pages</a>
-                  <ul class="dropdown">
-                    <li><a href="./index.html">- Home</a></li>
-                    <li><a href="./podcast.html">- Podcast</a></li>
-                    <li><a href="./single-podcast.html">- Single Podcast</a></li>
-                    <li><a href="./about.html">- About Us</a></li>
-                    <li><a href="./blog.html">- Blog</a></li>
-                    <li><a href="./single-blog.html">- Blog Details</a></li>
-                    <li><a href="./contact.html">- Contact</a></li>
-                    <li><a href="#">- Dropdown</a>
-                      <ul class="dropdown">
-                        <li><a href="#">- Dropdown Item</a></li>
-                        <li><a href="#">- Dropdown Item</a>
-                          <ul class="dropdown">
-                            <li><a href="#">- Even Dropdown</a></li>
-                            <li><a href="#">- Even Dropdown</a></li>
-                            <li><a href="#">- Even Dropdown</a></li>
-                            <li><a href="#">- Even Dropdown</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">- Dropdown Item</a></li>
-                        <li><a href="#">- Dropdown Item</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="./podcast.html">Podcasts</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="#">Blog</a>
-                  <ul class="dropdown">
-                    <li><a href="./blog.html">- Blog</a></li>
-                    <li><a href="./single-blog.html">- Blog Details</a></li>
-                  </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
-              </ul>
+              
+               <!-- <ul id="nav">
+                <li class="dropdown"> -->
+              <!-- <li class="dropdown-toggle">blog</li> -->
+               <!-- <a href="#" class="dropdown-toggle"> Blog</a> -->
+                <?php
+                    wp_nav_menu(
+                      array(
+                        'menu'       => 'MyPoca Menu',
+                        //  'menu_class' => 'dropdown-menu forAnimate',
+                        'container'  => '',
+                        //  'items_wrap' => '<ul id="%1$s" class="%2$s" role="menu" >%3$s</ul>',
+                      )
+                    );
+                ?>
+                <!-- </li>
+               </ul> -->
+              <!-- </ul> -->
 
               <!-- Top Search Area -->
               <div class="top-search-area">
