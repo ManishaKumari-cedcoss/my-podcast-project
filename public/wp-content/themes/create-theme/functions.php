@@ -274,7 +274,7 @@ class my_Widget extends WP_Widget {
 					<?php echo get_the_post_thumbnail($post['ID'], 'full'); ?>
                 </div>
                 <div class="blog-content">
-                  <a href="#" class="post-title"><?echo $post['post_title'];?></a>
+                  <a href="<?php echo get_permalink($post['ID']);?>" class="post-title"><?echo $post['post_title'];?></a>
                   <span class="post-date"><?echo $post['post_date'];?></span>
                 </div>
             </div>
@@ -352,7 +352,7 @@ class my_Widget_cat extends WP_Widget {
               <!-- <h5 class="widget-title"><?php //echo $title; ?> </h5> -->
 				<ul class="categories-list">
 					<?php foreach($categorie as $category){?>
-						<li><a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i><?php echo $category->name;?></a></li>
+						<li><a href="<?php echo get_category_link($category->term_id)?>"><i class="fa fa-angle-double-right" aria-hidden="true"></i><?php echo $category->name;?></a></li>
 					<?php } ?>
 				</ul>
 		</div>
@@ -427,7 +427,7 @@ class my_Widget_tag extends WP_Widget {
               
 				<ul class="tags-list">
 					<?php foreach($tags as $tag){?>
-						<li><a href="#"><?php echo $tag->name;?></a></li>
+						<li><a href="'. get_term_link($tag) .'"><?php echo $tag->name;?></a></li>
 					<?php } ?>
 				</ul>
 		</div>

@@ -1589,3 +1589,18 @@ ul {
     padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */
+.main-nav ul, .main-nav li{
+  display:inline;
+}
+ .main-nav ul ul{
+   position: absolute;
+   opacity: 0;
+ }
+
+ .main-nav ul li:hover > ul {
+   position: absolute;
+   top: 100%;
+   opacity: 1;
+   background-color: #000000;
+   border-bottom: none;
+ }

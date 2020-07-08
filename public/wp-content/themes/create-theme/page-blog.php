@@ -48,6 +48,38 @@ get_header();
         <div class="col-12 col-lg-8">
         
 
+          <?php
+                $wpb_all_query = new WP_Query(
+                    array(
+                        'post_status' => 'publish',  // thequery.
+                        'post_type'   => array( 'post' ),
+                    )
+                );
+                if ($wpb_all_query->have_posts()) :
+                ?>
+                         <!-- the loop -->
+                    <?php
+                    while ($wpb_all_query->have_posts()) :
+                        $wpb_all_query->the_post();?>
+                            <div class="single-blog-area mb-50">
+                                <?php the_post_thumbnail(); ?>
+                                <!-- Content -->
+                                <div class="post-content">
+                                    <br>
+                                    <a href="#" class="post-date"><?php the_date_xml(); ?></a>
+                                    <a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a>
+                                    <div class="post-meta mb-15">
+                                        <a href="#" class="post-author">By <?php the_author(); ?></a> |
+                                        <a href="#" class="post-catagory"><?php the_category(); ?></a>
+                                    </div>
+                                    <p><?php the_excerpt(); ?></p>
+                                    <a href="<?php the_permalink(); ?>" class="read-more-btn">Continue reading <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                    <?php
+                    endwhile;
+                endif; ?>
+
           <!-- Pagination -->
           <div class="poca-pager d-flex mb-80">
             <a href="#">Previous Post <span>Previous</span></a>

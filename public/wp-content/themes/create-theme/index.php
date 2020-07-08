@@ -11,7 +11,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package wpp_project
- */
+*/
 
 get_header();
 ?>

@@ -64,20 +64,34 @@
 
             <!-- Nav Start -->
             <div class="classynav">
-              
+              <div class="nav-container">
+              <nav class="navbar navbar-default ">
+              <?php
+                     wp_nav_menu(
+                       array(
+                         'menu'       => 'MyPoca Menu',
+                       
+                         'container'  => false,
+                        // 'menu_class' => 'nav navbar-nav',
+                        'items_wrap' => '<nav class="main-nav"><ul id="menu-main-nav" class="menu" >%3$s</ul>',
+                       )
+                     );
+                ?>
+              </nav>
+              </div>
                <!-- <ul id="nav">
                 <li class="dropdown"> -->
               <!-- <li class="dropdown-toggle">blog</li> -->
                <!-- <a href="#" class="dropdown-toggle"> Blog</a> -->
                 <?php
-                    wp_nav_menu(
-                      array(
-                        'menu'       => 'MyPoca Menu',
+                    // wp_nav_menu(
+                    //   array(
+                    //     'menu'       => 'MyPoca Menu',
                         //  'menu_class' => 'dropdown-menu forAnimate',
-                        'container'  => '',
-                        //  'items_wrap' => '<ul id="%1$s" class="%2$s" role="menu" >%3$s</ul>',
-                      )
-                    );
+                        // 'container'  => '',
+                    //     //  'items_wrap' => '<ul id="%1$s" class="%2$s" role="menu" >%3$s</ul>',
+                    //   )
+                    // );
                 ?>
                 <!-- </li>
                </ul> -->

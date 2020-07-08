@@ -46,7 +46,34 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-8">
-        
+        <?php
+	        if ( have_posts() ) {
+	        	while ( have_posts() ) {
+		        the_post();
+        ?>
+
+          <!-- Single Blog Area -->
+          <div class="single-blog-area mt-50 mb-50">
+            <?php the_post_thumbnail(); ?>
+            <!-- <a href="#" class="mb-30"><img src="<?php //echo get_template_directory_uri();?>/img/bg-img/21.jpg" alt=""></a> -->
+            <!-- Content -->
+            <div class="post-content">
+              <a href="#" class="post-date"><?php the_date();?></a>
+              <a href="<?php the_permalink();?>" class="post-title"><?php the_title();?></a>
+              <div class="post-meta mb-15">
+                <a href="#" class="post-author"><?php the_author();?></a> |
+                <a href="#" class="post-catagory"><?php the_category();?></a>
+              </div>
+              <p><?php the_content();?></p>
+              <!-- <p>Vestibulum lacus erat, pharetra et sodales ut, porta sit amet nibh. Sed vestibulum lacinia quam, vel iaculis nunc condimentum eget. Aliquam in mi pharetra, molestie augue ac, fermentum orci.</p> -->
+              <a href="<?php the_permalink();?>" class="read-more-btn">Continue reading <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+			  <?php
+		     }
+	    }  
+			?>
 
           <!-- Pagination -->
           <div class="poca-pager d-flex mb-80">

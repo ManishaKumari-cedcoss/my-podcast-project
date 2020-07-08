@@ -78,13 +78,13 @@ get_header();
                 <div class="post-meta">
                   <a href="#" class="post-author"><?php the_author();?></a> |
                   <a href="#" class="post-catagory"><?php the_category();?></a>
+                 
                 </div>
               </div>
 
               <p>Out too the been like hard off. Improve enquire welcome own beloved matters her. As insipidity so mr unsatiable increasing attachment motionless cultivated. Addition mr husbands unpacked occasion he oh. Is unsatiable if projecting
                 boisterous insensible. It recommend be resolving pretended middleton.</p>
               
-
               <!-- Blockquote -->
               <blockquote class="poca-blockquote d-flex">
                 <div class="icon">
@@ -100,7 +100,7 @@ get_header();
 	    }  
 			?>
 
-              <!-- Post Catagories -->
+            <!--  Post Catagories -->
               <div class="post-catagories d-flex align-items-center">
                 <h6>Categories:</h6>
                 <ul class="d-flex flex-wrap align-items-center">
@@ -116,6 +116,13 @@ get_header();
                 <a href="#">Previous Post <span>Episode 3 – Wardrobe For Busy People</span></a>
                 <a href="#">Next Post <span>Episode 6 – Defining Your Style</span></a>
               </div>
+
+              <?php 
+                  // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+              ?>
 
               <!-- Comments Area -->
               <div class="comment_area mb-50 clearfix">
